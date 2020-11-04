@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="tampil-disini"></div>
+    <br>
+    <p id="custom">Ini Teks Yang Akan Di Custom</p>
+    <br>
+    <p id="hide-show">Klik Hide Untuk Menghilangkan Text, Klik Show Untuk Menampilkan Text</p>
+    <br>
+    <button type="button" id="hide">Hide</button>
+    <button type="button" id="show">Show</button>
+    <br>
+    <button type="button" id="klik">Load Halaman</button>
+    <button type="button" id="klik-custom">Custom Text</button>
+    <button type="button" id="clear-custom">Clear Custom Text</button>
+</body>
+<style>
+    .text-custom{
+        color:red;
+        font-size:30px;
+        font-family: 'Courier New', Courier, monospace;
+    }
+</style>
+</html>
+<script src="js/jquery-2.1.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+
+        $('#hide').click(function(){
+            $('#hide-show').hide();
+        });
+        $('#show').click(function(){
+            $('#hide-show').show();
+        });
+
+       $('#klik').click(function(){
+            $('#tampil-disini').load('load.html');
+       });
+       $('#klik-custom').click(function(){
+            $('#custom').addClass('text-custom');
+       });
+       $('#clear-custom').click(function(){
+            $('#custom').removeClass('text-custom');
+       });
+    });
+</script>
